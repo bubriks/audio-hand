@@ -1,11 +1,9 @@
-#https://stackoverflow.com/questions/46758360/how-to-play-streaming-audio-from-internet-radio-on-python-3-5-3
-
 import vlc
 import json
 
 class Player:
     
-    def __init__(self):
+    def __init__(self, run_on_start = True):
         file = open('songs.json')
         self.URL_LIST = json.load(file)
         
@@ -14,12 +12,14 @@ class Player:
         
         self.player = instance.media_list_player_new()
         self.player.set_media_list(media_list)
-        self.play_stop()
+        
+        if run_on_start:
+            self.play_stop()
 
-    def next_song(self):
+    def forward(self):
         self.player.next()
     
-    def previous_song(self):
+    def backward(self):
         self.player.previous()
     
     def play_stop(self):
@@ -33,8 +33,8 @@ class Player:
     def is_playing(self):
         return self.playing
     
-    def set_volume(self, mvalue):
-        self.player.get_media_player().audio_set_volume(mvalue)
+    def set_volume(self, value):
+        self.player.get_media_player().audio_set_volume(value)
         
     def get_volume(self):
         return self.player.get_media_player().audio_get_volume()

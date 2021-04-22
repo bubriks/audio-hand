@@ -18,3 +18,20 @@ The solution decides the action based on location of various points within hand,
 - Show song details
 - Start/stop playing
 - Switch song
+
+## how to use it
+
+### Instalation
+
+This solution requires Python and the following libraries:
+
+- pip install numpy
+- pip install opencv-python
+- pip install mediapipe
+- pip install python-vlc
+
+### Run
+
+When inside the repository folder execute the following command to start.
+
+python hand_controls.py
