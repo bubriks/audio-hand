@@ -123,11 +123,11 @@ class AudioHands:
 
         volume_to_degrees = 2
 
-        #91 to display dot even if volume is 0
+        # 91 to display dot even if volume is 0
         cv2.ellipse(image, location, (radius, radius),
                     self.starting_angle,
-                    -91 -(50*volume_to_degrees),
-                    (volume * volume_to_degrees)-90-(50*volume_to_degrees),
+                    -91 - ( 50 * volume_to_degrees),
+                    (volume * volume_to_degrees) -90 -(50 * volume_to_degrees),
                     color, thickness)
 
     def horizontal_line(self, image, location):
@@ -135,7 +135,8 @@ class AudioHands:
         color = (int(255/width*location[0]), 214, int(255/height*location[1]))
         thickness = 3
 
-        cv2.line(image, (0, location[1]), (width, location[1]), color, thickness)
+        cv2.line(image, (0, location[1]), (width, location[1]), color,
+                 thickness)
 
     # ######################### Actions ##########################
 
@@ -157,7 +158,7 @@ class AudioHands:
                 self.player.play_stop()
 
     def next_prev(self, hand_landmarks, image):
-        if (self.open_finger(hand_landmarks, fingers.FINGER_INDEX) and 
+        if (self.open_finger(hand_landmarks, fingers.FINGER_INDEX) and
                 not self.open_finger(hand_landmarks, fingers.FINGER_MIDDLE) and
                 not self.open_finger(hand_landmarks, fingers.FINGER_RING) and
                 not self.open_finger(hand_landmarks, fingers.FINGER_LITTLE)):
