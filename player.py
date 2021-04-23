@@ -4,7 +4,7 @@ import json
 
 class Player:
 
-    def __init__(self, run_on_start = True):
+    def __init__(self, run_on_start=True):
         file = open('songs.json')
         self.URL_LIST = json.load(file)
 
