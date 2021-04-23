@@ -121,13 +121,13 @@ class AudioHands:
 
         color = (0, 100, int(255/100*volume))
 
-        volume_to_degrees = 2
+        volume_degrees = 2
 
         # 91 to display dot even if volume is 0
         cv2.ellipse(image, location, (radius, radius),
                     self.starting_angle,
-                    -91 - ( 50 * volume_to_degrees),
-                    (volume * volume_to_degrees) -90 -(50 * volume_to_degrees),
+                    -91 - (50 * volume_degrees),
+                    (volume * volume_degrees) - 90 - (50 * volume_degrees),
                     color, thickness)
 
     def horizontal_line(self, image, location):
