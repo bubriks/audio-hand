@@ -259,8 +259,8 @@ class AudioHands:
             self.set_volume(hand_landmarks, image)
             self.show_details(hand_landmarks, image)
 
-            # self.mp_drawing.draw_landmarks(
-            #    image, hand_landmarks, self.mp_hands.HAND_CONNECTIONS)
+            self.mp_drawing.draw_landmarks(
+                image, hand_landmarks, self.mp_hands.HAND_CONNECTIONS)
 
     def __init__(self):
         cap = cv2.VideoCapture(0)
