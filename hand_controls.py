@@ -170,7 +170,7 @@ class AudioHands:
 
             # change in x direction
             change = self.next_prev_starting_point[0] - point[0]
-            radius = int(abs(change) * 100)
+            radius = int(abs(change) * 200)
 
             if radius >= 40:
                 self.next_prev_starting_point = None
