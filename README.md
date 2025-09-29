@@ -25,17 +25,28 @@ The decision of the action is based on the location of various points within the
 
 ## how to use it
 
+### Requirements
+
+Needs VLC player, on linux (Ubuntu/Debian):
+```bash
+sudo apt update
+sudo apt install vlc libvlc-dev
+```
+
 ### Instalation
 
-This solution requires Python and the following libraries:
-
-- pip install numpy
-- pip install opencv-python
-- pip install mediapipe
-- pip install python-vlc
+```bash
+git clone https://github.com/bubriks/audio-hand
+cd audio-hand/
+python3 -m venv .venv
+source .venv/bin/activate
+pip install numpy opencv-python mediapipe python-vlc
+```
 
 ### Run
 
 When inside the repository folder execute the following command to start.
 
-python hand_controls.py
+```bash
+python3 hand_controls.py
+```
